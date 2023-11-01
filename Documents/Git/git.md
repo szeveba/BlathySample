@@ -6,59 +6,65 @@ A Git egy verziókövető rendszer. Van más megoldás is erre a kontextusra, de
 
 A Git egy szoftver amit a Git-CLI-n keresztül tudunk használni. Van Git-GUI is. Ránézésre is olyan fapadosnak tűnt számomra, hogy nem volt kedvem megismerkedni vele.
 
-## Személyes ajánlás a használatra
+**Figyelem:** A verziókövető rendszerek használata egy készség. Méghozzá egy olyan készség ami abszolút elvárt a szoftverfejlesztés területén. Nem kell brutálisan mélyen ismerned, de minél jobban tudod használni annál jobb. Kezd el használni, mire odaérsz, hogy fizetnének a munkádért rád fog ragadni kellően a szükséges ismeret.
 
-Jómagam a GitHub-CLI-t és a Git-et használom. A GitHub-CLI-t arra használom, hogy definiáljak a segítségével egy távoli repository-t a GitHub-on. Ez többek között azért is jó, mert így nem kell beállítanom a távoli repository-m lokálisan. (--set-upstream-es parancs kiadása nem szükséges)
+## Alapfogalmak
+
+### commit
+
+Változtatások halmaza melyhez message-t fűzünk, hogy tudjuk mi is a változtatások célja
+
+### staged
+
+olyan változtatások melyek a következő commitba fognak kerülni
+
+### branch
+
+magyarul ág: egy commit mindig a checkouttal megjelölt branch-be kerül
+
+### lokális repository
+
+a repository helyi változata, ebbe dolgozol
+
+### remote repository
+
+a repository távoli helye, ezzel szinkronizálod a lokális repository-d
+
+### clone
+
+remote repository első letöltése, hogy kialakítsd lokálisan a repository-d
+
+### push
+
+lokális repository módosításainak feltöltése a remote repositoryra
+
+### pull
+
+a remote repository változtatásainak letöltése a már meglévő lokális repository-dba
+
+### merge
+
+amikor egy branch commitjait szinkronizálod egy másik branch-el
+
+### fork
+
+leágaztatás, gyakorlatilag egy repository állapotának a magadévá tétele
+
+### stash
+
+átmeneti tároló a kódbázisod változtatásainak tárolására
+
+## Személyes ajánlás a verziókövetésre
+
+A git egy iszonyatosan egyszerű, de mégis nagyon összetett rendszer. Nagyon sok funkciója van és sok funkciót több parancs által is elérsz. A legkevésbé sem célom teljes git anyagot átadni. A cél csak az, hogy értelmesen, hatékonyan tudd használni, annyira amennyire szeretnéd. Minimum annyira használd, hogy van egy ágad amibe mindig commmitolsz és pusholod, hogy meglegyen bárhol is dolgoznál vele.
+
+**OneDrive, GoogleDrive, e-mail-en és Messengeren elküldöm magamnak iszonyatosan kontraproduktív és antipattern!**
+
+Jómagam a GitHub-CLI-t és a Git-CLI-t használom. A GitHub-CLI-t arra használom, hogy definiáljak a segítségével egy távoli repository-t a GitHub-on. Ez többek között azért is jó, mert így nem kell beállítanom a távoli repository-m lokálisan. (--set-upstream-es parancs kiadása nem szükséges)
 
 Ha olyan környezetben dolgozom ami a projekt generálás során lokális repository-t is létrehoz akkor először létrehozom a projektet majd odanavigálok parancssorban és a `gh repo create` parancs kiadása után a lokális repository push-olása opciót választom. Ezt azért így csinálom, mert  így a fejlesztőkörnyezet beállítja a megfelelő gitignore fájlt előre.
 
 Ha nem ilyen jellegű a fejlesztőkörnyezet amiben dolgozom akkor viszont nagyon hasznos a GitHub-CLI mert a repo létrehozásakor kiválaszthatjuk, hogy milyen típusú gitignore-t akarunk használni.
-
-### Alapfogalmak
-
-#### commit
-
-Változtatások halmaza melyhez message-t fűzünk, hogy tudjuk mi is a változtatások célja
-
-#### staged
-
-olyan változtatások melyek a következő commitba fognak kerülni
-
-#### branch
-
-magyarul ág: egy commit mindig a checkouttal megjelölt branch-be kerül
-
-#### lokális repository
-
-a repository helyi változata, ebbe dolgozol
-
-#### remote repository
-
-a repository távoli helye, ezzel szinkronizálod a lokális repository-d
-
-#### clone
-
-remote repository első letöltése, hogy kialakítsd lokálisan a repository-d
-
-#### push
-
-lokális repository módosításainak feltöltése a remote repositoryra
-
-#### pull
-
-a remote repository változtatásainak letöltése a már meglévő lokális repository-dba
-
-#### merge
-
-amikor egy branch commitjait szinkronizálod egy másik branch-el
-
-#### fork
-
-leágaztatás, gyakorlatilag egy repository állapotának a magadévá tétele
-
-#### stash
-
-átmeneti tároló a kódbázisod változtatásainak tárolására
 
 ### GitHub-CLI parancsok
 
