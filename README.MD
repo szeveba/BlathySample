@@ -5,6 +5,7 @@ Ez a projekt terv szerint a referencia anyagok gyűjtőhelye lesz.
 ## Jegyzetek
 
 - [Git használata](git.md)
+- [Tesztelés](tests.md)
 
 ## Feladatgyűjtemények
 
