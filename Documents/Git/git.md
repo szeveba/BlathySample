@@ -2,6 +2,108 @@
 
 A konzolos gitet a hardcore arcoknak javasom első sorban. Én szeretem de meg kell hagyni, hogy a Dark Souls-t is...
 
+A Git egy verziókövető rendszer. Van más megoldás is erre a kontextusra, de az ipar ezt használja mint de facto szabvány. (A de facto szabvány olyan szokás vagy konvenció, amely a közvélemény vagy a piaci erők által domináns pozíciót szerzett, például korai piacra lépéssel, egyszerűen megfogalmazva, azért 'szabvány' mert mindenki ezt használja.)
+
+A Git egy szoftver amit a Git-CLI-n keresztül tudunk használni. Van Git-GUI is. Ránézésre is olyan fapadosnak tűnt számomra, hogy nem volt kedvem megismerkedni vele.
+
+## Személyes ajánlás a használatra
+
+Jómagam a GitHub-CLI-t és a Git-et használom. A GitHub-CLI-t arra használom, hogy definiáljak a segítségével egy távoli repository-t a GitHub-on. Ez többek között azért is jó, mert így nem kell beállítanom a távoli repository-m lokálisan. (--set-upstream-es parancs kiadása nem szükséges)
+
+Ha olyan környezetben dolgozom ami a projekt generálás során lokális repository-t is létrehoz akkor először létrehozom a projektet majd odanavigálok parancssorban és a `gh repo create` parancs kiadása után a lokális repository push-olása opciót választom. Ezt azért így csinálom, mert  így a fejlesztőkörnyezet beállítja a megfelelő gitignore fájlt előre.
+
+Ha nem ilyen jellegű a fejlesztőkörnyezet amiben dolgozom akkor viszont nagyon hasznos a GitHub-CLI mert a repo létrehozásakor kiválaszthatjuk, hogy milyen típusú gitignore-t akarunk használni.
+
+### Alapfogalmak
+
+#### commit
+
+Változtatások halmaza melyhez message-t fűzünk, hogy tudjuk mi is a változtatások célja
+
+#### staged
+
+olyan változtatások melyek a következő commitba fognak kerülni
+
+#### branch
+
+magyarul ág: egy commit mindig a checkouttal megjelölt branch-be kerül
+
+#### lokális repository
+
+a repository helyi változata, ebbe dolgozol
+
+#### remote repository
+
+a repository távoli helye, ezzel szinkronizálod a lokális repository-d
+
+#### clone
+
+remote repository első letöltése, hogy kialakítsd lokálisan a repository-d
+
+#### push
+
+lokális repository módosításainak feltöltése a remote repositoryra
+
+#### pull
+
+a remote repository változtatásainak letöltése a már meglévő lokális repository-dba
+
+#### merge
+
+amikor egy branch commitjait szinkronizálod egy másik branch-el
+
+#### fork
+
+leágaztatás, gyakorlatilag egy repository állapotának a magadévá tétele
+
+#### stash
+
+átmeneti tároló a kódbázisod változtatásainak tárolására
+
+### GitHub-CLI parancsok
+
+|parancs|hatás|
+|:---:|:---:|
+|`gh auth login`|GitHub-ra való bejelentkezés a CLI-vel, csak egyszer kell|
+|`gh repo create`|új távoli repository definiálása|
+|`gh browse`|távoli repository GitHub-os böngészős nézetének megnyitása|
+|`gh repo clone username/repositoryName`|repo klónozása GitHub-ról|
+|`gh repo list`|összes távoli GitHub repository kilistázása|
+
+A többit olyan ritkán használom, ha egyáltalán használom, hogy inkább meg sem említem.
+
+### Git-CLI parancsok
+
+|parancs|hatás|
+|:---:|:---:|
+|`git status`|repository állapotának lekérdezése|
+|`git log`|repository előzmények megjelenítése|
+|`git diff`|verziókövetett fájlok változtatásainak lekérdezése, melyek még nem lettek staged-nek jelölve|
+|`git add .`|Minden módosítás staged-nek jelölése|
+|`git restore --staged .`|minden staged-nek jelölt módosítás visszaállítása unstaged-re|
+|`git commit -m "commit message"`|A staged változtatások commit-olása|
+|`git push`|lokális repository változtatásainak feltöltése a távoli repositoryba|
+|`git pull`|remote repository változtatásainak letöltése a lokális repository-ba|
+|`git stash`|minden verziókövetett fájl módosításának eltétele a stash-be|
+|`git stash pop`|módosítások kivétele a stash-ből|
+|`git stash drop`|a stash eldobása|
+|`git branch -a`|repository ágainak lekérdezése|
+|`git branch asd`|asd nevű ág definiálása|
+|`git checkout asd`|a használandó branch kijelölése, a commitok az asd nevű ágra fognak kerülni|
+|`git merge asd`|asd commitjainak hozzáadása az aktuálisan használt branchbe (checkout!)|
+
+Ahol pontot használok a parancsban az mind olyan aminek egy fájlt meg kell határozni. Amikor `.`-ot írok azzal egy relatív elérési utat adok meg, azt ahol éppen vagyok a parancssoron belül. Ennek eredménye, hogy minden ami az aktuális mappában van (rekurzívan értendő) kijelölésre kerül.
+
+asd-nevű branch-et nem szoktam létrehozni, azt csak a példa kedvéért írtam. Jómagam a következő brancheket szoktam használni.
+
+|branch név|szerepe|
+|:---:|:---:|
+|master|a stabil forráskód helye|
+|development|amikor fejlesztek ide committolok, ha elérek egy mérföldkövet és stabil, a dev branchet merge a masterbe|
+|production|ebbe csak a masterből merge-elök|
+
+Ezen kívül ha valami tök új funkciót készülök összerakosgatni, előfordul, hogy egy külön branchet hozok létre. Az ilyen brancheket a szakzsargon `feature branch`-nek nevezi.
+
 ## Git kliensek
 
 ### Grafikus
@@ -84,7 +186,7 @@ Magyarán kijavítod majd committolod. De grafikus felületen javítgatnám ki, 
 
 Eléggé bele lehet kavarodni. Első sorban igyekezz elkerülni. Ha bekövetkezett a baj körültekintően próbáld meg grafikus felületen összeollózni. Ha nem megy sehogy sem bármikor létre tudsz hozni egy új repositoryt amibe áthúzhatod a fájlokat majd committolod. Nem a legszebb megoldás, de garantáltan megoldja a problémát... De csak végső esetben csináljátok ezt.
 
-## Git Parancsok Segítségéhez
+## Git parancsok megismerése
 
 - `git help <command>`: Segítség egy konkrét parancs használatához.
 - `git --help`: Git parancssor segítség.
