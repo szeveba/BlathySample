@@ -6,7 +6,7 @@ Ez a projekt terv szerint a referencia anyagok gyűjtőhelye lesz.
 
 - [Git használata](Documents/Git/git.md)
 - [Tesztelés](Documents/Szoftvertesztelés/szoftvertesztelés-jegyzet.md)
-
+- [Programozás alapok](Documents/Programoz%C3%A1si%20alapok/programozasi-alapok-targyleiras.md)
 ## Feladatgyűjtemények
 
 - [Alap gyakorló feladatok (suranyisz)](http://suranyisz.hu/infoA/programozasi_alapfeladatok.pdf)
