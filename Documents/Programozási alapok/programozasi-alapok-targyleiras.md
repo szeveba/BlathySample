@@ -1,5 +1,7 @@
 # Programozási alapok
 
+[Tárgyleíráshoz jegyzet](python-tárgyleírás-jegyzet.md)
+
 ## Tárgyleírás
 
 ### A tantárgy tanításának fő célja
