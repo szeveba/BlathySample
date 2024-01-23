@@ -1,6 +1,7 @@
 # Webprogramozás (11. évfolyam)
 
-[Jegyzet](webprogramozás-jegyzet.md)
+- [Jegyzet](webprogramozás-jegyzet.md)
+- [Tárgyleírás alapú jegyzet](python-tárgyleírás-jegyzet.md)
 
 ## Tárgyleírás
 
