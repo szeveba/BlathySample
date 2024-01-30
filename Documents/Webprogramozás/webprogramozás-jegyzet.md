@@ -61,3 +61,7 @@ audio, video {
 
 #### **Visszajelzés és Összegzés:**
 Az óra során alaposan megismertük a médiaelemeket és gyakorlatban is alkalmaztuk azokat egy valós weboldal tervezésével és stílusozásával. A következő órákon ezen alapokra építve folytatjuk a webdizájn fejlesztését.
+
+## Reszponzívitás
+A reszponzív mechanizmusok a tartalom a megjelenítéshez rendelkezésre álló területhez való adaptációját valósítja meg.
+

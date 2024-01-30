@@ -63,6 +63,7 @@ Ebben az esetben
 |egész|-1, 0, 1, 2, ...|
 |logikai|True,False|
 |valós|3.14, 0.5, ...|
+
 ## Escape karakterek
 
 |szimbólum|jelentés|
@@ -74,9 +75,65 @@ Ebben az esetben
 |\r|kocsi vissza (sor elejére ugrás)|
 |\b|backspace (horizontálisan -1)|
 
-## Típuskonverzió vs típuskényszerítés
+## Típuskonverzió vs típuskényszerítés (lehet nem jó)
 - **típuskényszerítés**: a adott értéket kezeljünk úgy mintha más típusú lenne
     - pl.: 3.14 egész számként kezelve 3
 - **típuskonverzió**: 
 adott érték átalakítása adatszerkezet szintjén másik típusúra
     - pl.: int("3")
+
+## Operátorok
+Operandusok között alkalmazott műveletek halmaza.
+
+### Operátorok fajtái
+
+#### Aritmetikai operátorok
+
+|köznyelvben|pythonban|
+|:---:|:---:|
+|összeadás|+|
+|kivonás|-|
+|szorzás|*|
+|osztás|/|
+|egészrész|//|
+|maradékos osztás|%|
+|hatványozás|**|
+
+
+#### Logikai operátorok
+
+|köznyelvben|pythonban|
+|:---:|:---:|
+|és|and|
+|vagy|or|
+|negáció (tagadás)|not|
+
+#### Relációs operátorok
+Reláció jelentése: kölcsönös függés, viszonyulás
+
+|köznyelvben|pythonban|
+|:---:|:---:|
+|egyenlőségvizsgálat (ekvivalencia)|==|
+|nem egyenlő|!=|
+|kisebb|<|
+|nagyobb|>|
+|kisebb vagy egyenlő|<=|
+|nagyobb vagy egyenlő|>=|
+
+#### Értékadó operátorok
+
+|köznyelvben|pythonban|
+|:---:|:---:|
+|értékadás|=|
+|összeadás|+=|
+|kivonás|-=|
+|szorzás|*=|
+|osztás|/=|
+|egészrész|//=|
+|maradékos osztás|%=|
+|hatványozás|**=|
+
+#### Bitenkénti operátorok
+Kettes számrendszerben alkalmazott műveleteket szimbolizáló operátorok halmaza.
+
+

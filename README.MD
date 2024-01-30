@@ -4,6 +4,7 @@ Ez a projekt terv szerint a referencia anyagok gyűjtőhelye lesz.
 
 ## Jegyzetek
 
+- [Programozással kapcsolatos alapfogalmak](Documents/Elte%20programozási%20alapfogalmak.pdf)
 - [Git használata](Documents/Git/git.md)
 - [Tesztelés](Documents/Szoftvertesztelés/szoftvertesztelés-jegyzet.md)
 - [Programozás alapok](Documents/Programoz%C3%A1si%20alapok/programozasi-alapok-targyleiras.md)

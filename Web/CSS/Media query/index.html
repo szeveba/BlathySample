@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        @media (max-width: 500px) {
+            body {
+                background-color: red;
+            }
+        }
+    </style>
+    <script>
+        function xPathQuery(xpath, node=document.body) {
+            const op = [];
+            const result = document.evaluate(xpath, node);
+            let current = result.iterateNext();
+            while(current != null){
+                op.push(current);
+                current = result.iterateNext();
+            }
+            return op;
+        }
+        function scrapPage(){
+            const rows = xPathQuery("//table[1]/tbody/tr");
+            rows.forEach(row => {
+                const columns = xPathQuery("//td",row);
+            });
+        }
+        function scrapping(){
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
