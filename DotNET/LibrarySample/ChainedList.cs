@@ -24,7 +24,7 @@ namespace LibrarySample
         }
         private class ChainedListItem
         {
-            public ChainedListItem(T? value)
+            internal ChainedListItem(T? value)
             {
                 Value = value;
             }
@@ -39,7 +39,7 @@ namespace LibrarySample
         public bool IsReadOnly { get; private set; }
         public void Add(T item)
         {
-            if (IsReadOnly) throw new NotSupportedException("This collection is read only.");
+            if (IsReadOnly) throw new InvalidOperationException("This collection is read only.");
             var newItem = new ChainedListItem(item);
             if (head == null) head = newItem;
             else
@@ -55,11 +55,31 @@ namespace LibrarySample
         }
         public void Clear()
         {
-            throw new NotImplementedException();
+            var current = head;
+            head = null;
+            while (current != null)
+            {
+                var temp = current.Next;
+                current.Next = null;
+                current = temp;
+            }
         }
         public bool Contains(T item)
         {
-            throw new NotImplementedException();
+            var current = head;
+            while (current != null)
+            {
+                if (current.Value == null)
+                {
+                    if (item == null) return true;
+                }
+                else
+                {
+                    if (current.Value.Equals(item)) return true;
+                }
+                current = current.Next;
+            }
+            return false;
         }
         public void CopyTo(T[] array, int arrayIndex)
         {
@@ -67,7 +87,22 @@ namespace LibrarySample
         }
         public int IndexOf(T item)
         {
-            throw new NotImplementedException();
+            int i = 0;
+            var current = head;
+            while (current != null)
+            {
+                if (current.Value == null)
+                {
+                    if (item == null) return i;
+                }
+                else
+                {
+                    if (current.Value.Equals(item)) return i;
+                }
+                current = current.Next;
+                i++;
+            }
+            return -1;
         }
         public void Insert(int index, T item)
         {
@@ -84,11 +119,17 @@ namespace LibrarySample
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            var current = head;
+            while (current != null)
+            {
+                 return current.Value;
+                current = current.Next;
+            }
         }
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
+
     }
 }

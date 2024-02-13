@@ -1,10 +1,19 @@
 ﻿using LibrarySample;
+using System.Collections.Immutable;
 
 namespace ConsoleSample;
 class Program
 {
     static void Main(string[] args)
     {
+        
+        var list = new List<object?>();
+        list.Add(null);
+        
+        
+        Console.WriteLine(list.Contains(null));
+
+        return;
         (string expression, decimal result)[] expressions = {
             ("1+1", 2m),
             ("2*2", 4m),
