@@ -2,6 +2,9 @@
 
 [Tárgyleíráshoz jegyzet](python-tárgyleírás-jegyzet.md)
 
+## Érettségi feladatmegoldások
+- [2019.10 CB-Radio](https://github.com/szeveba/BlathySample/tree/master/Documents/Programoz%C3%A1si%20alapok/%C3%89retts%C3%A9gi%20feladatok/2310_cbradio)
+
 ## Tárgyleírás
 
 ### A tantárgy tanításának fő célja
