@@ -139,8 +139,36 @@ Kettes számrendszerben alkalmazott műveleteket szimbolizáló operátorok halm
 
 ## Elemi programozási tételek
 
-- min O(n)
-- max O(n)
+### Algoritmus futásidejének jellemzése
+
+- **O(n):** Az algoritmus futásideje elemszám függvényében
+  - **O():** futásidő függvénye
+  - **n:** gyűjtemény elemszáma melyel dolgozik az algoritmus
+
+### Elemi programozási tételek csoportosítása futásidő szempontjából
+- minimum O(n)
+  - Összegzés
+  - Megszámlálás
+  - Maximumkiválasztás
+- maximum O(n)
+  - Eldöntés
+  - Kiválasztás
+  - Lineáris keresés
+
+### Elemi programozási tételek jellemzése futásidő szempontjából
+
+- **O(1):** Akár egy lépés alatt végezhet az algoritmus.
+- **O(n/2):** Átlagosan a lépések száma az elemszám fele.
+- **O(n):** Minden elemet végig kell nézzünk legalább egyszer.
+
+|Tétel neve|Legjobb eset|Átlagos eset|Legrosszabb eset|
+|:---:|:---:|:---:|:---:|
+|**Összegzés**|O(n)|O(n)|O(n)|
+|**Megszámlálás**|O(n)|O(n)|O(n)|
+|**Maximumkiválasztás**|O(n)|O(n)|O(n)|
+|**Eldöntés**|O(1)|O(n/2)|O(n)|
+|**Kiválasztás**|O(1)|O(n/2)|O(n)|
+|**Lineáris keresés**|O(1)|O(n/2)|O(n)|
 
 ### Összegzés 
 
