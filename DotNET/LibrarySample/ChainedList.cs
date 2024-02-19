@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,12 +32,9 @@ namespace LibrarySample
             internal T? Value { get; set; }
             internal ChainedListItem? Next { get; set; }
         }
-        private int count;
+        public int Count { get; private set; }
         private ChainedListItem? head;
-
         public T this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Count => count;
-        public bool IsReadOnly { get; private set; }
         public void Add(T item)
         {
             if (IsReadOnly) throw new InvalidOperationException("This collection is read only.");
@@ -51,8 +49,10 @@ namespace LibrarySample
                 }
                 current.Next = newItem;
             }
-            count++;
+            Count++;
         }
+
+        public bool IsReadOnly { get; private set; }
         public void Clear()
         {
             var current = head;
@@ -114,7 +114,23 @@ namespace LibrarySample
         }
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+
+        }
+        private ChainedListItem GetElementAt(int index)
+        {
+            CheckIndex(index);
+            int i = 0;
+            var current = head;
+            while (i != index)
+            {
+                current = current!.Next;
+            }
+            return current!;
+        }
+
+        private void CheckIndex(int index)
+        {
+            if (index < 0 || Count <= index) throw new IndexOutOfRangeException();
         }
 
         public IEnumerator<T> GetEnumerator()
@@ -122,14 +138,42 @@ namespace LibrarySample
             var current = head;
             while (current != null)
             {
-                 return current.Value;
+                // yield egy 'sytax sugar', arra készteti a fordítót hogy generáljon egy osztályt a
+                yield return current.Value;
                 current = current.Next;
             }
         }
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator();
+            return new ChainedListEnumerator(head);
         }
+        private class ChainedListEnumerator : IEnumerator<T?>
+        {
+            private ChainedList<T?>.ChainedListItem head;
 
+            public ChainedListEnumerator(ChainedListItem? head)
+            {
+                this.head = head;
+            }
+
+            public T? Current { get; private set; }
+
+            object IEnumerator.Current => throw new NotImplementedException();
+
+            public void Dispose()
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool MoveNext()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Reset()
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

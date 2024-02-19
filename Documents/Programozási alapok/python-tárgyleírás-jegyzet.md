@@ -137,3 +137,40 @@ Reláció jelentése: kölcsönös függés, viszonyulás
 Kettes számrendszerben alkalmazott műveleteket szimbolizáló operátorok halmaza.
 
 
+## Elemi programozási tételek
+
+- min O(n)
+- max O(n)
+
+### Összegzés
+
+Valamilyen művelet által a gyűjteményben való elemeket összegezzük.
+Pl.:
+- összeadás
+  - minden szám összeadása
+  - minden karakterlánc összefűzése
+- szorzás
+  - minden szám összeszorzása
+
+[mintakód](../Python/Programozási%20tételek/összegzés.py)
+
+### Megszámlálás
+
+**Cél:** Hány feltételt teljesítő elem található egy gyűjteményben?
+[mintakód](../Python/Programozási%20tételek/megszámlálás.py)
+
+
+### Eldöntés
+
+**Cél:** Van e feltételt teljesítő elem a gyűjteményben?
+[mintakód](../Python/Programozási%20tételek/eldöntés.py)
+
+
+
+### Kiválasztás
+
+### Lineáris keresés
+
+### Maximumkeresés
+
+**Cél:** Szélsőérték keresés egy gyűjteményben.
