@@ -144,28 +144,24 @@ Kettes számrendszerben alkalmazott műveleteket szimbolizáló operátorok halm
 
 ### Összegzés 
 
-[minta](../Python/Programozási%20tételek/összegzés.py)
-
-**Cél:** Valamilyen művelet által a gyűjteményben való elemeket összegezzük.
-
-Pl.:
-- összeadás
-  - minden szám összeadása
-  - minden karakterlánc összefűzése
-- szorzás
-  - minden szám összeszorzása
+- [minta](../Python/Programozási%20tételek/összegzés.py)
+- **Cél:** Valamilyen művelet által a gyűjteményben való elemeket összegezzük.
+- példák
+  - összeadás
+    - minden szám összeadása
+    - minden karakterlánc összefűzése
+  - szorzás
+    - minden szám összeszorzása
 
 ### Megszámlálás 
 
-[minta](../Python/Programozási%20tételek/megszámlálás.py)
-
-**Cél:** Hány feltételt teljesítő elem található egy gyűjteményben?
+- [minta](../Python/Programozási%20tételek/megszámlálás.py)
+- **Cél:** Hány feltételt teljesítő elem található egy gyűjteményben?
 
 ### Eldöntés 
 
-[minta](../Python/Programozási%20tételek/eldöntés.py)
-
-**Cél:** Van e feltételt teljesítő elem a gyűjteményben?
+- [minta](../Python/Programozási%20tételek/eldöntés.py)
+- **Cél:** Van e feltételt teljesítő elem a gyűjteményben?
 
 ### Kiválasztás
 
@@ -173,4 +169,4 @@ Pl.:
 
 ### Maximumkeresés
 
-**Cél:** Szélsőérték keresés egy gyűjteményben.
+- **Cél:** Szélsőérték keresés egy gyűjteményben.
