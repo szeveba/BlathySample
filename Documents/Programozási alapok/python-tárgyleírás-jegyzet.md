@@ -142,9 +142,12 @@ Kettes számrendszerben alkalmazott műveleteket szimbolizáló operátorok halm
 - min O(n)
 - max O(n)
 
-### Összegzés
+### Összegzés 
 
-Valamilyen művelet által a gyűjteményben való elemeket összegezzük.
+[minta](../Python/Programozási%20tételek/összegzés.py)
+
+**Cél:** Valamilyen művelet által a gyűjteményben való elemeket összegezzük.
+
 Pl.:
 - összeadás
   - minden szám összeadása
@@ -152,20 +155,17 @@ Pl.:
 - szorzás
   - minden szám összeszorzása
 
-[mintakód](../Python/Programozási%20tételek/összegzés.py)
+### Megszámlálás 
 
-### Megszámlálás
+[minta](../Python/Programozási%20tételek/megszámlálás.py)
 
 **Cél:** Hány feltételt teljesítő elem található egy gyűjteményben?
-[mintakód](../Python/Programozási%20tételek/megszámlálás.py)
 
+### Eldöntés 
 
-### Eldöntés
+[minta](../Python/Programozási%20tételek/eldöntés.py)
 
 **Cél:** Van e feltételt teljesítő elem a gyűjteményben?
-[mintakód](../Python/Programozási%20tételek/eldöntés.py)
-
-
 
 ### Kiválasztás
 
