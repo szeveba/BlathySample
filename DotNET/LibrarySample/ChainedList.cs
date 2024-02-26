@@ -53,6 +53,8 @@ namespace LibrarySample
         }
 
         public bool IsReadOnly { get; private set; }
+        
+        
         public void Clear()
         {
             var current = head;

@@ -1,0 +1,41 @@
+﻿<Window x:Class="MVVMSample.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMSample"
+        xmlns:vm="clr-namespace:MVVMSample.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainVM />
+    </Window.DataContext>
+    <Grid Margin="2.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Content="Könyvek" HorizontalContentAlignment="Center" Margin="2.5"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Keresés" Margin="2.5"/>
+            <TextBox Grid.Column="1" Text="{Binding SearchPhrase}" Margin="2.5"/>
+        </Grid>
+        <ListBox Grid.Row="2" ItemsSource="{Binding ListedBooks}" Margin="2.5"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Új" Margin="2.5" Command="{Binding CMD_AddBook}"/>
+            <Button Grid.Column="1" Content="Szerkesztés" Margin="2.5" IsEnabled="{Binding BookManipulatingEnabled}"/>
+            <Button Grid.Column="2" Content="Törlés" Margin="2.5" IsEnabled="{Binding BookManipulatingEnabled}"/>
+        </Grid>
+    </Grid>
+</Window>

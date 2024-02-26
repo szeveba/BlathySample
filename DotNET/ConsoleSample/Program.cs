@@ -1,4 +1,5 @@
 ﻿using LibrarySample;
+using System.Collections;
 using System.Collections.Immutable;
 
 namespace ConsoleSample;
@@ -6,13 +7,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-        var list = new List<object?>();
-        list.Add(null);
-        
-        
-        Console.WriteLine(list.Contains(null));
-
+        ChainedList<int> list = new ChainedList<int>(Enumerable.Range(0,10));
+        foreach (int i in (list as IEnumerable))
+        {
+            Console.WriteLine(i);
+        }
         return;
         (string expression, decimal result)[] expressions = {
             ("1+1", 2m),
