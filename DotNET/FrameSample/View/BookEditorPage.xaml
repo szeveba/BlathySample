@@ -1,0 +1,43 @@
+﻿<Page x:Class="FrameSample.View.BookEditorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FrameSample"
+      mc:Ignorable="d" 
+      d:Background="White"
+      Loaded="Page_Loaded"
+      Title="Könyv szerkesztő">
+
+    <Grid Margin="2.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="2" Content="Könyv szerkesztő" FontWeight="Bold" HorizontalAlignment="Center" Margin="2.5"/>
+        <Label Grid.Row="1" Content="Szerző" Margin="2.5"/>
+        <Button x:Name="BTN_SelectAuthor" Grid.Row="1" Grid.Column="1" Content="Kiválasztás" Margin="2.5" Padding="5"/>
+        <Label Grid.Row="2" Content="Cím" Margin="2.5" />
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="2.5" VerticalContentAlignment="Center"/>
+        <Label Grid.Row="3" Content="Műfaj" Margin="2.5"/>
+        <ComboBox x:Name="CB_Genre" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" Margin="2.5"/>
+        <Label Grid.Row="4" Content="Kiadva" Margin="2.5"/>
+        <DatePicker Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" Margin="2.5"/>
+        <Grid Grid.Row="5" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BTN_Back" Grid.Column="0" Content="Vissza" Margin="2.5"/>
+            <Button x:Name="BTN_Save" Grid.Column="1" Content="Mentés" Margin="2.5"/>
+        </Grid>
+    </Grid>
+</Page>
