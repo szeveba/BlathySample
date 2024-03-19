@@ -1,6 +1,8 @@
 # Webprogramozás (11. évfolyam)
 
-[Jegyzet](webprogramozás-jegyzet.md)
+## Anyagok
+- [HTML-CSS jegyzet részlet](webprogramozás-jegyzet.md)
+- [JavaScript jegyzet](JavaScript1.md)
 
 ## Tárgyleírás
 
