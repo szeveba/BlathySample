@@ -1,74 +1,42 @@
-
-import datetime
-import serial #TODO: pip install pyserial
 from serial.tools import list_ports
+from Atlas import Atlas
 
-class Steinhart:
-    a = 0.0011212735580564
-    b = 0.000235338520425013
-    c = 8.3442490007E-08
-    
-    def ohm_to_celsius(ohm):
-        return ohm
+import matplotlib.pyplot as plt
+import numpy as np
 
-class Atlas:
-    def __init__(self, port_name):
-        self.port = serial.Serial(port_name, timeout=1, baudrate=250000, dsrdtr=True)
+yAxisLabels = range(1, 17)
+xAxisLabels = range(1, 17)
 
-    def read_ohms(self):
-        self.port.write(b'r')
-        lines = []
-        while True:
-            line = self.port.readline().decode().strip()
-            print(line)
-            if line == 'r':  # Ha az üzenet 'r'
-                break  # Kilépés a ciklusból
-            lines.append(line.replace(',', '.'))
+fig, ax = plt.subplots()
+im = ax.imshow(np.zeros((16, 16)))  # Kezdetben üres kép
 
-        for _ in range(4):
-            lines.append(self.port.readline().decode().strip().replace(',', '.'))
+# Show all ticks and label them with the respective list entries
+ax.set_xticks(np.arange(len(xAxisLabels)), labels=xAxisLabels)
+ax.set_yticks(np.arange(len(yAxisLabels)), labels=yAxisLabels)
 
-        ohms_from_bytes = []
-        ohm_from_byte = 262140
-        while True:
-            byte1 = self.port.read()
-            byte2 = self.port.read()
+# Rotate the tick labels and set their alignment.
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
+         rotation_mode="anchor")
 
-            # Bájtokból értékek kiszámítása
-            ohm_from_byte = int.from_bytes(byte2 + byte1, byteorder='little', signed=False) * 4
-            if ohm_from_byte != 262140:
-                ohms_from_bytes.append(ohm_from_byte)
-            else:
-                break
-        return ohms_from_bytes
-    
-    def read_celsius(self):
-        ohms = self.read_ohms()
-        op = []
-        for ohm in ohms:
-            op.append(self.ohm_to_celsius(ohm))
-        return op
-
-    def ohm_to_celsius(ohm):
-        return ohm
+ax.set_title("Heatmap")
+fig.tight_layout()
+plt.show(block=False)  # Blokkolás nélküli megjelenítés
 
 ports = list_ports.comports()
 driver = Atlas(ports[1].name)
-ohms = driver.read_ohms()
-print(len(ohms))
 
-class Diák:
-    osztályszintű_adattag = "asda"
+while True:
+    temperatures = driver.read_celsius()
 
-    def __init__(self, név: str, születés_évszám: int) -> None:
-        self.név = név
-        self.kor = 2024 - születés_évszám
-    
-    @staticmethod
-    def osztályszintű_metódus():
-        print("asd")
+    values = np.ndarray((16, 16))
+    idx = 0
+    for xIdx in range(0, 16):
+        for yIdx in range(0, 16):
+            values[xIdx][yIdx] = temperatures[idx]
+            idx += 1
 
-    def példányszintű_metódus(self):
-        print(self)
+    print(values)
+    im.set_data(values)  # Adatok frissítése
+    plt.draw()
+    plt.pause(5)  # Frissítési idő
 
-diák = Diák("Kiss Béla", 1995)
