@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVMSample", "MVVMSample\MV
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameSample", "FrameSample\FrameSample.csproj", "{4499B9A9-0460-4929-B940-3CEB9C68BB65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeWebDriverTest", "EdgeWebDriverTest\EdgeWebDriverTest.csproj", "{F4ED422D-DBC6-4573-A636-E0E42778E310}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdgeWebDriverTest", "EdgeWebDriverTest\EdgeWebDriverTest.csproj", "{F4ED422D-DBC6-4573-A636-E0E42778E310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumSample", "SeleniumSample\SeleniumSample.csproj", "{C796F4F4-E4A4-4364-8879-BB0597FA48C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumSample", "SeleniumSample\SeleniumSample.csproj", "{C796F4F4-E4A4-4364-8879-BB0597FA48C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMSample2", "MVVMSample2\MVVMSample2.csproj", "{1F09D7F9-7B68-4EA7-B10B-AF5873814FD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{C796F4F4-E4A4-4364-8879-BB0597FA48C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C796F4F4-E4A4-4364-8879-BB0597FA48C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C796F4F4-E4A4-4364-8879-BB0597FA48C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F09D7F9-7B68-4EA7-B10B-AF5873814FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F09D7F9-7B68-4EA7-B10B-AF5873814FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F09D7F9-7B68-4EA7-B10B-AF5873814FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F09D7F9-7B68-4EA7-B10B-AF5873814FD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
