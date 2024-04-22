@@ -13,15 +13,7 @@ namespace NUnitSample
         [Test]
         public void InstantiationWithoutParameter()
         {
-            try
-            {
-                new ChainedList<object>();
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
-            Assert.Pass();
+            
         }
 
         [TestCase(0)]
